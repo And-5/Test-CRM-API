@@ -1,0 +1,15 @@
+services:
+  fastapi:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      API_KEY: ${API_KEY:-}
+      BASE_URL: ${BASE_URL:-}
+      GET_CUSTOMERS: ${GET_CUSTOMERS:-}
+      CREATE_CUSTOMER: ${CREATE_CUSTOMER:-}
+      ORDERS_CUSTOMER: ${ORDERS_CUSTOMER:-}
+      CREATE_ORDER: ${CREATE_ORDER:-}
+      PAYMENT_ORDER: ${PAYMENT_ORDER:-}
+    volumes:
+      - ./src:/src
