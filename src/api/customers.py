@@ -23,7 +23,8 @@ def get_customers(name: Optional[str] = None,
     params = {
         "name": name,
         "email": email,
-        "dateFrom": validate_date(create_date).date() if create_date else None
+        "dateFrom": validate_date(create_date).date() if create_date else None,
+        "dateTo": validate_date(create_date).date() if create_date else None
     }
 
     request_url = build_request_url(GET_CUSTOMERS, params)
